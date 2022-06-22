@@ -12,7 +12,7 @@ protocol MainViewOutput: AnyObject {
 }
 
 protocol MainViewInput: AnyObject {
-    func updateViewWithModel(model: PurpleData)
+    func updateViewWithModel(model: MainModelToView)
 }
 
 protocol MainModelInput: AnyObject {

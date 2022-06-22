@@ -19,6 +19,11 @@
 		60EF88C428631D68007EFCDA /* MainData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF88C328631D68007EFCDA /* MainData.swift */; };
 		60EF88C628631D95007EFCDA /* MainProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF88C528631D95007EFCDA /* MainProtocols.swift */; };
 		60EF88C828631FDA007EFCDA /* MainAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF88C728631FDA007EFCDA /* MainAssembly.swift */; };
+		60EF88CA286329C2007EFCDA /* UIView+layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF88C9286329C2007EFCDA /* UIView+layout.swift */; };
+		60EF88CC28633671007EFCDA /* MainModelToView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF88CB28633671007EFCDA /* MainModelToView.swift */; };
+		60EF88CE28633BCC007EFCDA /* ReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF88CD28633BCC007EFCDA /* ReuseIdentifier.swift */; };
+		60EF88D028633C93007EFCDA /* TestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF88CF28633C93007EFCDA /* TestCell.swift */; };
+		60EF88D328634292007EFCDA /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EF88D228634292007EFCDA /* ImageCell.swift */; };
 		9DDB8D162049B64437D3EF17 /* Pods_PryanikyTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E637BD847A4AABD698FCD346 /* Pods_PryanikyTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +42,11 @@
 		60EF88C328631D68007EFCDA /* MainData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainData.swift; sourceTree = "<group>"; };
 		60EF88C528631D95007EFCDA /* MainProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProtocols.swift; sourceTree = "<group>"; };
 		60EF88C728631FDA007EFCDA /* MainAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAssembly.swift; sourceTree = "<group>"; };
+		60EF88C9286329C2007EFCDA /* UIView+layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+layout.swift"; sourceTree = "<group>"; };
+		60EF88CB28633671007EFCDA /* MainModelToView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModelToView.swift; sourceTree = "<group>"; };
+		60EF88CD28633BCC007EFCDA /* ReuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifier.swift; sourceTree = "<group>"; };
+		60EF88CF28633C93007EFCDA /* TestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCell.swift; sourceTree = "<group>"; };
+		60EF88D228634292007EFCDA /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		864991755EA2FCED002378AF /* Pods-PryanikyTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PryanikyTest.release.xcconfig"; path = "Target Support Files/Pods-PryanikyTest/Pods-PryanikyTest.release.xcconfig"; sourceTree = "<group>"; };
 		CF543701B150C4B0B665FDF0 /* Pods-PryanikyTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PryanikyTest.debug.xcconfig"; path = "Target Support Files/Pods-PryanikyTest/Pods-PryanikyTest.debug.xcconfig"; sourceTree = "<group>"; };
 		E637BD847A4AABD698FCD346 /* Pods_PryanikyTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PryanikyTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +85,7 @@
 		6077CFB728630EDB00082228 /* PryanikyTest */ = {
 			isa = PBXGroup;
 			children = (
+				60EF88D128633CA5007EFCDA /* Views */,
 				60EF88C228631D58007EFCDA /* Entity */,
 				6077CFCE2863126000082228 /* Main */,
 				6077CFC628630EE100082228 /* Info.plist */,
@@ -90,6 +101,8 @@
 				6077CFCD2863124800082228 /* Storyboards */,
 				6077CFB828630EDB00082228 /* AppDelegate.swift */,
 				6077CFBA28630EDB00082228 /* SceneDelegate.swift */,
+				60EF88C9286329C2007EFCDA /* UIView+layout.swift */,
+				60EF88CD28633BCC007EFCDA /* ReuseIdentifier.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -112,6 +125,7 @@
 				60EF88C028631C66007EFCDA /* NetworkManager.swift */,
 				60EF88C528631D95007EFCDA /* MainProtocols.swift */,
 				60EF88C728631FDA007EFCDA /* MainAssembly.swift */,
+				60EF88CB28633671007EFCDA /* MainModelToView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -122,6 +136,15 @@
 				60EF88C328631D68007EFCDA /* MainData.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		60EF88D128633CA5007EFCDA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				60EF88CF28633C93007EFCDA /* TestCell.swift */,
+				60EF88D228634292007EFCDA /* ImageCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		B67BC6645A4995579C2BE91D /* Frameworks */ = {
@@ -258,13 +281,18 @@
 			files = (
 				60EF88C628631D95007EFCDA /* MainProtocols.swift in Sources */,
 				60EF88C828631FDA007EFCDA /* MainAssembly.swift in Sources */,
+				60EF88D028633C93007EFCDA /* TestCell.swift in Sources */,
+				60EF88D328634292007EFCDA /* ImageCell.swift in Sources */,
 				60EF88C428631D68007EFCDA /* MainData.swift in Sources */,
 				60EF88C128631C66007EFCDA /* NetworkManager.swift in Sources */,
 				6077CFD2286312A000082228 /* MainViewModel.swift in Sources */,
 				6077CFBD28630EDB00082228 /* MainViewController.swift in Sources */,
+				60EF88CA286329C2007EFCDA /* UIView+layout.swift in Sources */,
+				60EF88CE28633BCC007EFCDA /* ReuseIdentifier.swift in Sources */,
 				6077CFB928630EDB00082228 /* AppDelegate.swift in Sources */,
 				6077CFBB28630EDB00082228 /* SceneDelegate.swift in Sources */,
 				6077CFD02863129600082228 /* MainModel.swift in Sources */,
+				60EF88CC28633671007EFCDA /* MainModelToView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
