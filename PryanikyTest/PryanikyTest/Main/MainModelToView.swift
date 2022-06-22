@@ -7,12 +7,6 @@
 
 import Foundation
 import Kingfisher
-//
-//struct MainModelToView {
-//    let labelString: String
-//    let picture: ImageResource?
-//    let variants: [Variant]
-//}
 
 struct MainModelToView {
     let labelString: LabelString

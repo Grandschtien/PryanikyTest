@@ -111,5 +111,10 @@ extension MainViewController: UITableViewDelegate {
             return
         }
         tableView.deselectRow(at: indexPath, animated: true)
+        if let row = modelForView?.variants.selectionId,
+           let cell = tableView.cellForRow(at: IndexPath(row: row, section: 0)),
+           cell.isSelected {
+            cell.setSelected(false, animated: true)
+        }
     }
 }
