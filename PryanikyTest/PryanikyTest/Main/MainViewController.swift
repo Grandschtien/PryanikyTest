@@ -61,28 +61,33 @@ extension MainViewController: MainViewInput {
 extension MainViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (modelForView?.variants.count ?? 0) + 3
+        return (modelForView?.variants.variants.count ?? 0) + 3
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueCell(cellType: TextCell.self, for: indexPath)
         let imageCell = tableView.dequeueCell(cellType: ImageCell.self, for: indexPath)
         switch indexPath.row {
         case 0:
-            cell.configureWithText(text: modelForView?.labelString ?? "")
+            cell.configureWithText(text: modelForView?.labelString.string ?? "")
         case 1...3:
-            guard let variant = modelForView?.variants[indexPath.row - 1] else {
+            guard let variant = modelForView?.variants.variants[indexPath.row - 1] else {
                 return .init()
             }
             cell.configure(with: variant)
         case 4:
-            imageCell.configureWithResource(resource: modelForView?.picture)
+            imageCell.configureWithResource(resource: modelForView?.picture.picture)
             return imageCell
-        case (modelForView?.variants.count ?? 0) + 2:
-            cell.configureWithText(text: modelForView?.labelString ?? "")
+        case (modelForView?.variants.variants.count ?? 0) + 2:
+            cell.configureWithText(text: modelForView?.labelString.string ?? "")
         default :
             return .init()
         }
         return cell
+    }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == modelForView?.variants.selectionId {
+            cell.setSelected(true, animated: false)
+        }
     }
 }
 
@@ -90,18 +95,18 @@ extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            print(modelForView?.labelString ?? "")
+            print("\(modelForView?.labelString.name ?? "") \(modelForView?.labelString.string ?? "") с индексом \(indexPath.row)")
         case 1...3:
-            guard let variant = modelForView?.variants[indexPath.row - 1] else {
+            guard let variant = modelForView?.variants.variants[indexPath.row - 1] else {
                 return
             }
-            print("\(variant.id) \(variant.text)")
+            print("\(modelForView?.variants.name ?? ""): \(variant.id) \(variant.text)")
         case 4:
-            if let url = modelForView?.picture?.downloadURL {
-                print(url)
+            if let url = modelForView?.picture.picture?.downloadURL {
+                print("\(modelForView?.picture.name ?? ""): \(url)")
             }
-        case (modelForView?.variants.count ?? 0) + 2:
-            print(modelForView?.labelString ?? "")
+        case (modelForView?.variants.variants.count ?? 0) + 2:
+            print("\(modelForView?.labelString.name ?? "") \(modelForView?.labelString.string ?? "") с индексом \(indexPath.row)")
         default :
             return
         }

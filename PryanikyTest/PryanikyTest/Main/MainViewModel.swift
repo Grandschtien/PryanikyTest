@@ -35,9 +35,14 @@ extension MainViewModel: MainViewOutput {
 extension MainViewModel: MainModelOutput {
     func didLoadData(model: PurpleData) {
         let resource = makeImageResource(url: URL(string: model.data[1].data.url ?? ""))
-        let modelForView = MainModelToView(labelString: model.data[0].data.text ?? "",
-                                           picture: resource,
-                                           variants: model.data[2].data.variants ?? [])
+        let labelString = LabelString(name: model.data[0].name, string: model.data[0].data.text ?? "")
+        let picture = Picture(name: model.data[1].name, picture: resource)
+        let variants = Variants(name: model.data[2].name,
+                                variants: model.data[2].data.variants ?? [],
+                                selectionId: model.data[2].data.selectedID ?? 0)
+        let modelForView = MainModelToView(labelString: labelString,
+                                           picture: picture,
+                                           variants: variants)
         view?.updateViewWithModel(model: modelForView)
     }
 }

@@ -7,9 +7,29 @@
 
 import Foundation
 import Kingfisher
+//
+//struct MainModelToView {
+//    let labelString: String
+//    let picture: ImageResource?
+//    let variants: [Variant]
+//}
 
 struct MainModelToView {
-    let labelString: String
+    let labelString: LabelString
+    let picture: Picture
+    let variants: Variants
+}
+
+struct LabelString {
+    let name: String
+    let string: String
+}
+struct Picture {
+    let name: String
     let picture: ImageResource?
+}
+struct Variants {
+    let name: String
     let variants: [Variant]
+    let selectionId: Int
 }
